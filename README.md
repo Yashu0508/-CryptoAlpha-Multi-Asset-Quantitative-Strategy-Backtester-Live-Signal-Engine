@@ -15,6 +15,10 @@ CryptoAlpha is a modular foundation for a quantitative crypto-trading platform. 
 
 For local backend development, create a Python virtual environment, install `backend/requirements.txt`, then run `uvicorn app.main:app --reload` from `backend/`. For the frontend, run `npm install` and `npm run dev` from `frontend/`.
 
+## Database migrations
+
+From `backend/`, apply the schema with `alembic upgrade head`. The initial migration creates the PostgreSQL schema and promotes `ohlcv` to a TimescaleDB hypertable when the extension is available. It remains usable as a regular indexed PostgreSQL table when TimescaleDB is not installed.
+
 ## Quality conventions
 
 Configuration is environment-driven, request/response contracts are versioned under `app/schemas`, and domain modules own their future use cases. Keep external I/O at the API, service, database, and WebSocket boundaries.
