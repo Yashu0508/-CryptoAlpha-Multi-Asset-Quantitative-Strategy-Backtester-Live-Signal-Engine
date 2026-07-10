@@ -24,6 +24,11 @@ class Settings(BaseSettings):
     coingecko_api_key: str | None = None
     coingecko_timeout_seconds: float = 10.0
     coingecko_max_retries: int = 3
+    binance_rest_base_url: str = "https://api.binance.com/api/v3"
+    binance_websocket_base_url: str = "wss://stream.binance.com:9443/ws"
+    binance_timeout_seconds: float = 10.0
+    binance_max_retries: int = 3
+    binance_websocket_reconnect_max_delay_seconds: float = 30.0
 
 
 @lru_cache
