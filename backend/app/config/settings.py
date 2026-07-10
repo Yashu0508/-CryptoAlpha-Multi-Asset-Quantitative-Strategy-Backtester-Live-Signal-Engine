@@ -20,6 +20,10 @@ class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     database_url: str = "postgresql+asyncpg://cryptoalpha:cryptoalpha@localhost:5432/cryptoalpha"
     cors_origins: list[str] = Field(default_factory=lambda: ["http://localhost:5173"])
+    coingecko_base_url: str = "https://api.coingecko.com/api/v3"
+    coingecko_api_key: str | None = None
+    coingecko_timeout_seconds: float = 10.0
+    coingecko_max_retries: int = 3
 
 
 @lru_cache
