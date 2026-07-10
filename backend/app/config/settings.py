@@ -29,6 +29,10 @@ class Settings(BaseSettings):
     binance_timeout_seconds: float = 10.0
     binance_max_retries: int = 3
     binance_websocket_reconnect_max_delay_seconds: float = 30.0
+    coinmarketcap_base_url: str = "https://pro-api.coinmarketcap.com"
+    coinmarketcap_api_key: str | None = None
+    coinmarketcap_timeout_seconds: float = 10.0
+    coinmarketcap_max_retries: int = 3
 
 
 @lru_cache
