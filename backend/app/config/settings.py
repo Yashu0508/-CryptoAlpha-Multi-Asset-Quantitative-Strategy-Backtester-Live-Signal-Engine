@@ -33,6 +33,14 @@ class Settings(BaseSettings):
     coinmarketcap_api_key: str | None = None
     coinmarketcap_timeout_seconds: float = 10.0
     coinmarketcap_max_retries: int = 3
+    dexscreener_base_url: str = "https://api.dexscreener.com"
+    dexscreener_timeout_seconds: float = 10.0
+    dexscreener_max_retries: int = 3
+    dexscreener_requests_per_minute: int = 300
+    altfins_base_url: str = "https://altfins.com"
+    altfins_api_key: str | None = None
+    altfins_timeout_seconds: float = 15.0
+    altfins_max_retries: int = 3
 
 
 @lru_cache
